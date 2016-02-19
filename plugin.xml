@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="mediarecorder"
+        version="0.0.2">
+    <name>Media Recorder Plugin</name>
+
+  <js-module src="www/MediaRecorder.js" name="MediaRecorder">
+    <clobbers target="MediaRecorder" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+  
+    <config-file target="config.xml" parent="/*">
+      <feature name="MediaRecorderBridge">
+        <param name="android-package" value="com.sergemazille.MediaRecorderBridge" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    
+    </config-file>
+        
+    <source-file src="src/android/MediaRecorderBridge.java" target-dir="src/com/sergemazille" />
+    <source-file src="src/android/camera_layout.xml" target-dir="res/layout" />
+
+  </platform>
+
+</plugin>
