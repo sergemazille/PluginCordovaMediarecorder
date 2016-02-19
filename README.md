@@ -39,7 +39,7 @@ Tested on 4.2.2 and 4.4.2 but might depends on device hardware capabilities.
 where :
 * 'action' can be either 'startRecording' or 'stopRecording'
 * 'cameraToBackground' is a boolean. Set to *true* it will bring the app's view in front of the camera.
-* 'successCallback' refers to a function to call when the device is starting to record.
+* 'successCallback' refers to a function to call when the device is starting to record or has stopped the recording process.
 * 'errorCallback' refers to a function to call when there's something wrong either with the action or the arguments.
 
 ## Sample App
